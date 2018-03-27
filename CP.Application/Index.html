@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html ng-app="starter">
+<head>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/main.min.css">
+
+    <title>Registration of people</title>
+</head>
+<body ng-controller='valecontroller'>
+    <div class="app__content">
+        <!-- App Content 🙉-->
+
+        <div class="app__header-content">
+            <!-- App Header Content 🙉-->
+
+            <div class="app__header-top clearfix">
+                <!-- App Header Top 🙉-->
+                <div class="header-top__logo">
+                    <a href="#"><img src="http://logok.org/wp-content/uploads/2014/08/Vale-logo-and-wordmark-1024x768.png" width="100" height="55" alt=""></a>
+                </div>
+            </div><!-- /App Header Top 🙈-->
+            <div class="app__header-bottom clearfix">
+                <!-- App Header Bottom 🙉-->
+                <div class="header-bottom__store">
+
+                    <div class="build-icon">
+                        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                    </div>
+                    <div class="store-info ng-cloak">
+                        <p>{{email}}<a ng-click="leaveSistem()" style="color: #2c3e50; cursor: pointer;">{{logoff}}</a></p>
+                    </div>
+                </div>
+            </div><!-- /App Header Bottom 🙈-->
+        </div><!-- /App Header Content 🙈-->
+    </div><!-- /App Content 🙈-->
+
+    <div class="main__content clearfix">
+        <!-- Main Content 🙉-->
+        <div class="main">
+
+            <div class="main__left-content">
+                
+                <!-- Main Left Content 🙉-->
+                <div ng-style="{'visibility':'inherit'}">
+                    <div class="select-packagerow">
+                        <h2 class="headingtwo texttransformup">People Registration System</h2>
+                        <p>Basically the cadastre will receive basic information of individuals or legal entities.</p>                        
+                    </div>                    
+                    <ul class="saler__list" style="width: 300px;">
+                        <p>Data:</p>
+                        <div style="margin-left: 10px;">
+                            <li class="item" style="margin-bottom: 1rem;">
+                                <input class="default-input" type="text" placeholder="Name" ng-model="name" required>
+                            </li>
+                            <li class="item" style="margin-bottom: 1rem;">
+                                <input class="default-input" type="date" placeholder="date of birth" ng-model="dateofbirth" required>
+                            </li>
+                            <li class="item" style="margin-bottom: 1rem;">
+                                <input class="default-input" type="text" placeholder="Occupation" ng-model="occupation" required>
+                            </li>
+                            <li class="item" style="margin-bottom: 1rem;">
+                                <input class="default-input" type="text" placeholder="Number" ng-model="number" required>
+                                <input class="default-input" type="text" placeholder="type of phone" ng-model="occupation" required>
+                            </li>                           
+                        </div>
+                        <li>
+                            <input class="default-btn-input" style="font-size: 20px; width: 100px;" type="submit" value="Enter" ng-click="sendData();">
+                        </li>
+                    </ul>
+                </div>
+
+            </div><!-- /Main Left Content 🙈-->
+
+
+        </div>
+
+    </div><!-- /Main Content 🙈-->
+
+    <div class="contentProcess"></div>
+
+    <div class="box">
+        <script type="text/ng-template" id="modalMensagem">
+            <div style="box-shadow: 0 0 0 9999px rgba(26, 13, 13, 0.50);background-color: #fff !important;">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" ng-click="close();">×</button>
+                    <span class="fa fa-warning"></span> Information
+                </div>
+                <div class="modal-body" style="padding: 0px;margin-bottom: -20px;">
+                    <div class="alert {{tipomensagem}}">
+                        {{mensagem}}
+                    </div>
+                </div>
+                <div class="modal-footer" style="text-align: center;">
+                    <button id="alertBtnOK" class="btnAlerta btn-primary" ng-click="ok();" ng-if="!YesNo">OK</button>
+                    <button id="alertBtnYes" class="btnAlerta btn-primary" ng-click="ok();" ng-if="YesNo">Sim</button>
+                    <button id="alertBtnNo" class="btnAlerta btn-primary" ng-click="close();" ng-if="YesNo">Não</button>
+                </div>
+            </div>
+        </script>
+    </div>
+
+    <script type="text/javascript" src="assets/lib/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="assets/lib/jquery-ui.js"></script>
+
+    <script type="text/javascript" src="assets/lib/angular.min.js"></script>
+    <script type="text/javascript" src="assets/lib/angular-resource.js"></script>
+    <script type="text/javascript" src="assets/lib/ui-bootstrap-tpls.min.js"></script>
+    <script type="text/javascript" src="assets/lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/lib/angular-animate.min.js"></script>
+
+    <script type="text/javascript" src="assets/js/application/vale.aplication.js"></script>
+    <script type="text/javascript" src="assets/js/application/vale.library.js"></script>
+
+    <script type="text/javascript" src="assets/js/controller/valecontroller.js"></script>
+    <script type="text/javascript" src="assets/js/controller/logincontroller.js"></script>
+</body>
+</html>
